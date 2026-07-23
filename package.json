@@ -3,7 +3,7 @@
   "displayName": "CSPro Language Support",
   "description": "Full development support for CSPro: syntax highlighting, autocomplete, navigation, diagnostics, dictionary parsing and code generation.",
   "version": "0.3.0",
-  "publisher": "ubos",
+  "publisher": "ExpedictoWalugembe",
   "license": "MIT",
   "engines": {
     "vscode": "^1.75.0"
@@ -18,7 +18,7 @@
     "cspro",
     "census",
     "survey",
-    "ubos",
+    "UBOS",
     "logic"
   ],
   "main": "./out/extension.js",

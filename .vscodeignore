@@ -6,4 +6,5 @@ tsconfig.json
 **/*.map
 **/*.ts
 node_modules/**
-"CSPro Language Support Extension.md"
+CSPro Language Support Extension.md
+**/*.vsix
