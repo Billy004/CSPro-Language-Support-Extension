@@ -1,0 +1,123 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "CSPro",
+  "scopeName": "source.cspro",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#preproc" },
+    { "include": "#procDeclaration" },
+    { "include": "#controlKeywords" },
+    { "include": "#declarationKeywords" },
+    { "include": "#storageKeywords" },
+    { "include": "#constants" },
+    { "include": "#functions" },
+    { "include": "#operators" },
+    { "include": "#numbers" },
+    { "include": "#identifiers" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.cspro",
+          "match": "//.*$"
+        },
+        {
+          "name": "comment.block.cspro",
+          "begin": "\\{",
+          "end": "\\}"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.cspro",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            { "name": "constant.character.escape.cspro", "match": "\\\\." }
+          ]
+        },
+        {
+          "name": "string.quoted.single.cspro",
+          "begin": "'",
+          "end": "'",
+          "patterns": [
+            { "name": "constant.character.escape.cspro", "match": "\\\\." }
+          ]
+        }
+      ]
+    },
+    "preproc": {
+      "patterns": [
+        {
+          "name": "meta.preprocessor.cspro",
+          "match": "(?i)^\\s*(#include|#define|#ifdef|#ifndef|#endif|#else)\\b"
+        }
+      ]
+    },
+    "procDeclaration": {
+      "match": "(?i)\\b(PROC)\\s+([A-Za-z_][A-Za-z0-9_]*)",
+      "captures": {
+        "1": { "name": "keyword.other.proc.cspro" },
+        "2": { "name": "entity.name.function.proc.cspro" }
+      }
+    },
+    "controlKeywords": {
+      "name": "keyword.control.cspro",
+      "match": "(?i)\\b(if|then|else|elseif|endif|do|while|until|enddo|for|endfor|forcase|endcase|forlist|loop|by|break|next|skip|to|reenter|advance|noinput|endgroup|group|when|otherwise|recode|select|case)\\b"
+    },
+    "declarationKeywords": {
+      "name": "keyword.other.declaration.cspro",
+      "match": "(?i)\\b(PROC|ENDPROC|preproc|postproc|onfocus|onoccchange|killfocus|numeric|alpha|string|array|list|function|end)\\b"
+    },
+    "storageKeywords": {
+      "name": "storage.type.cspro",
+      "match": "(?i)\\b(numeric|alpha|string|array|list|audio|file|document|money|valueset|pff|hashmap)\\b"
+    },
+    "constants": {
+      "patterns": [
+        {
+          "name": "constant.language.cspro",
+          "match": "(?i)\\b(notappl|default|refused|missing|valid|invalid|true|false|maxocc|minocc|curocc|totocc)\\b"
+        }
+      ]
+    },
+    "functions": {
+      "name": "support.function.cspro",
+      "match": "(?i)\\b(errmsg|warning|setvalue|getvalue|length|strip|maketext|tonumber|edit|pos|poschar|compare|concat|upper|lower|getbuffer|putbuffer|visualvalue|setfont|accept|prompt|errmsgputtext|logtext|abort|exit|reenter|skip|impute|count|seek|sum|average|min|max|abs|int|frac|log|exp|sqrt|round|trunc|random|seed|highlight|hide|show|display|setproperty|getproperty|savearray|loadcase|writecase|retrieve|key|find|locate|inarea|specialvalue|valuecode|itemtype|hassocc|getlabel|setlabel|curmap|inc|dec|now|today|datediff|timestamp|sysdate|systime|filecopy|filedelete|fileexists|fileread|filewrite|pathname|dirlist|syncconnect|syncstart|syncdata|syncregister|websend|webget|paradata)\\b"
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.logical.cspro",
+          "match": "(?i)\\b(and|or|not|in|has|like)\\b"
+        },
+        {
+          "name": "keyword.operator.cspro",
+          "match": "(<=|>=|<>|=|<|>|\\+|-|\\*|/|\\^)"
+        }
+      ]
+    },
+    "numbers": {
+      "name": "constant.numeric.cspro",
+      "match": "\\b([0-9]+(\\.[0-9]+)?)\\b"
+    },
+    "identifiers": {
+      "patterns": [
+        {
+          "comment": "ALL_CAPS names are typically dictionary items / fields in CSPro.",
+          "name": "variable.other.constant.cspro",
+          "match": "\\b[A-Z][A-Z0-9_]{1,}\\b"
+        },
+        {
+          "comment": "Any remaining identifier is treated as a variable.",
+          "name": "variable.other.cspro",
+          "match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b"
+        }
+      ]
+    }
+  }
+}

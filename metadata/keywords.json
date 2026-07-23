@@ -1,0 +1,29 @@
+{
+  "control": [
+    "if", "then", "else", "elseif", "endif",
+    "do", "while", "until", "enddo",
+    "for", "endfor", "by", "to",
+    "forcase", "endcase", "forlist",
+    "recode", "skip", "reenter", "advance", "noinput",
+    "break", "next", "select", "case", "when", "otherwise",
+    "group", "endgroup", "loop"
+  ],
+  "declaration": [
+    "PROC", "ENDPROC", "preproc", "postproc",
+    "onfocus", "killfocus", "onoccchange",
+    "function", "end"
+  ],
+  "storage": [
+    "numeric", "alpha", "string", "array", "list",
+    "audio", "file", "document", "money", "valueset",
+    "pff", "hashmap"
+  ],
+  "constants": [
+    "notappl", "default", "refused", "missing",
+    "valid", "invalid", "true", "false",
+    "maxocc", "minocc", "curocc", "totocc"
+  ],
+  "operators": [
+    "and", "or", "not", "in", "has", "like"
+  ]
+}

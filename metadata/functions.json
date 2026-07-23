@@ -1,0 +1,196 @@
+{
+  "errmsg": {
+    "description": "Displays an error message to the operator. Supports %-style placeholders.",
+    "signature": "errmsg(message [, arg1, arg2, ...])",
+    "parameters": ["message", "...args"],
+    "returns": "numeric (button pressed)"
+  },
+  "warning": {
+    "description": "Displays a warning message that does not stop data entry.",
+    "signature": "warning(message [, arg1, ...])",
+    "parameters": ["message", "...args"]
+  },
+  "setvalue": {
+    "description": "Assigns a value to a variable or dictionary item.",
+    "signature": "setvalue(item, value)",
+    "parameters": ["item", "value"]
+  },
+  "getvalue": {
+    "description": "Returns the current value of a variable or dictionary item.",
+    "signature": "getvalue(item)",
+    "parameters": ["item"]
+  },
+  "length": {
+    "description": "Returns the number of characters in a string.",
+    "signature": "length(string)",
+    "parameters": ["string"],
+    "returns": "numeric"
+  },
+  "concat": {
+    "description": "Concatenates two or more strings into one.",
+    "signature": "concat(string1, string2, ...)",
+    "parameters": ["string1", "string2", "...more"],
+    "returns": "string"
+  },
+  "maketext": {
+    "description": "Builds a formatted string using %-style placeholders.",
+    "signature": "maketext(format, arg1, arg2, ...)",
+    "parameters": ["format", "...args"],
+    "returns": "string"
+  },
+  "strip": {
+    "description": "Removes leading and trailing spaces from a string.",
+    "signature": "strip(string)",
+    "parameters": ["string"],
+    "returns": "string"
+  },
+  "upper": {
+    "description": "Converts a string to uppercase.",
+    "signature": "upper(string)",
+    "parameters": ["string"],
+    "returns": "string"
+  },
+  "lower": {
+    "description": "Converts a string to lowercase.",
+    "signature": "lower(string)",
+    "parameters": ["string"],
+    "returns": "string"
+  },
+  "tonumber": {
+    "description": "Converts a string to a numeric value.",
+    "signature": "tonumber(string)",
+    "parameters": ["string"],
+    "returns": "numeric"
+  },
+  "pos": {
+    "description": "Returns the position of a substring within a string (0 if not found).",
+    "signature": "pos(lookfor, string)",
+    "parameters": ["lookfor", "string"],
+    "returns": "numeric"
+  },
+  "skip": {
+    "description": "Skips to a specified field, bypassing intermediate fields.",
+    "signature": "skip to FIELD",
+    "parameters": ["field"]
+  },
+  "recode": {
+    "description": "Maps ranges of input values to output values.",
+    "signature": "recode source => target;",
+    "parameters": ["source", "target"]
+  },
+  "count": {
+    "description": "Counts the number of occurrences that satisfy a condition.",
+    "signature": "count(GROUP where condition)",
+    "parameters": ["group"],
+    "returns": "numeric"
+  },
+  "seek": {
+    "description": "Searches occurrences of a group for a matching condition.",
+    "signature": "seek(GROUP where condition)",
+    "parameters": ["group"],
+    "returns": "numeric"
+  },
+  "sum": {
+    "description": "Returns the sum of an item across occurrences.",
+    "signature": "sum(ITEM)",
+    "parameters": ["item"],
+    "returns": "numeric"
+  },
+  "min": {
+    "description": "Returns the minimum value among the arguments.",
+    "signature": "min(value1, value2, ...)",
+    "parameters": ["...values"],
+    "returns": "numeric"
+  },
+  "max": {
+    "description": "Returns the maximum value among the arguments.",
+    "signature": "max(value1, value2, ...)",
+    "parameters": ["...values"],
+    "returns": "numeric"
+  },
+  "abs": {
+    "description": "Returns the absolute value of a number.",
+    "signature": "abs(number)",
+    "parameters": ["number"],
+    "returns": "numeric"
+  },
+  "int": {
+    "description": "Returns the integer portion of a number.",
+    "signature": "int(number)",
+    "parameters": ["number"],
+    "returns": "numeric"
+  },
+  "round": {
+    "description": "Rounds a number to the nearest integer or given decimals.",
+    "signature": "round(number [, decimals])",
+    "parameters": ["number", "decimals"],
+    "returns": "numeric"
+  },
+  "random": {
+    "description": "Returns a random number within a range.",
+    "signature": "random(low, high)",
+    "parameters": ["low", "high"],
+    "returns": "numeric"
+  },
+  "visualvalue": {
+    "description": "Returns the value currently displayed for a field.",
+    "signature": "visualvalue(FIELD)",
+    "parameters": ["field"]
+  },
+  "reenter": {
+    "description": "Forces the operator to re-enter the current or a specified field.",
+    "signature": "reenter [FIELD];",
+    "parameters": ["field"]
+  },
+  "accept": {
+    "description": "Displays a menu of choices and returns the selected number.",
+    "signature": "accept(header, option1, option2, ...)",
+    "parameters": ["header", "...options"],
+    "returns": "numeric"
+  },
+  "prompt": {
+    "description": "Prompts the operator for free-text input.",
+    "signature": "prompt(message)",
+    "parameters": ["message"],
+    "returns": "string"
+  },
+  "impute": {
+    "description": "Assigns a value to an item as part of imputation/editing.",
+    "signature": "impute(ITEM, value)",
+    "parameters": ["item", "value"]
+  },
+  "writecase": {
+    "description": "Writes the current case to the output data file.",
+    "signature": "writecase();",
+    "parameters": []
+  },
+  "loadcase": {
+    "description": "Loads a case from a dictionary/data source by key.",
+    "signature": "loadcase(DICT, key)",
+    "parameters": ["dictionary", "key"]
+  },
+  "today": {
+    "description": "Returns the current system date.",
+    "signature": "today()",
+    "parameters": [],
+    "returns": "date"
+  },
+  "now": {
+    "description": "Returns the current system date and time.",
+    "signature": "now()",
+    "parameters": [],
+    "returns": "datetime"
+  },
+  "datediff": {
+    "description": "Returns the difference between two dates in a given unit.",
+    "signature": "datediff(date1, date2, unit)",
+    "parameters": ["date1", "date2", "unit"],
+    "returns": "numeric"
+  },
+  "fileexists": {
+    "description": "Returns 1 if the given file exists, otherwise 0.",
+    "signature": "fileexists(path)",
+    "parameters": ["path"],
+    "returns": "numeric"
+  }
+}

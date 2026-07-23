@@ -1,0 +1,78 @@
+{
+  "Procedure": {
+    "prefix": "proc",
+    "body": [
+      "PROC ${1:NAME}",
+      "",
+      "\t$0",
+      "",
+      "ENDPROC"
+    ],
+    "description": "CSPro PROC ... ENDPROC block"
+  },
+  "If block": {
+    "prefix": "if",
+    "body": [
+      "if ${1:condition} then",
+      "\t$0",
+      "endif;"
+    ],
+    "description": "if ... then ... endif"
+  },
+  "If else block": {
+    "prefix": "ifelse",
+    "body": [
+      "if ${1:condition} then",
+      "\t$2",
+      "else",
+      "\t$0",
+      "endif;"
+    ],
+    "description": "if ... then ... else ... endif"
+  },
+  "For loop": {
+    "prefix": "for",
+    "body": [
+      "for ${1:i} = ${2:1} to ${3:n}",
+      "\t$0",
+      "endfor;"
+    ],
+    "description": "for ... endfor loop"
+  },
+  "Do while loop": {
+    "prefix": "dowhile",
+    "body": [
+      "do while ${1:condition}",
+      "\t$0",
+      "enddo;"
+    ],
+    "description": "do while ... enddo loop"
+  },
+  "Error message": {
+    "prefix": "errmsg",
+    "body": [
+      "errmsg(\"${1:message}\");"
+    ],
+    "description": "errmsg(...) call"
+  },
+  "Age validation": {
+    "prefix": "validateage",
+    "body": [
+      "if ${1:AGE} < ${2:18} or ${1:AGE} > ${3:60} then",
+      "\terrmsg(\"Invalid age\");",
+      "\treenter;",
+      "endif;"
+    ],
+    "description": "Range validation with errmsg + reenter"
+  },
+  "Recode": {
+    "prefix": "recode",
+    "body": [
+      "recode ${1:SOURCE}:",
+      "\t${2:1:17} => ${3:1};",
+      "\t${4:18:high} => ${5:2};",
+      "endrecode;"
+    ],
+    "description": "recode mapping block"
+  }
+}

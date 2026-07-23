@@ -1,0 +1,34 @@
+{ Household survey entry logic — demonstration }
+
+PROC GLOBAL
+
+numeric total_persons;
+string status_message;
+
+PROC MAIN
+
+    // Program starts here
+    total_persons = 0;
+
+PROC AGE
+
+    // Validate age is within an acceptable range
+    if AGE < 0 or AGE > 120 then
+        errmsg("Age must be between 0 and 120");
+        reenter;
+    endif;
+
+PROC SEX
+
+    if SEX <> 1 and SEX <> 2 then
+        errmsg("Sex must be 1 (Male) or 2 (Female)");
+        reenter;
+    endif;
+
+PROC HOUSEHOLD_REC
+
+    // This block is intentionally missing an endif to show diagnostics
+    if REGION = 0 then
+        warning("Region not set");
+
+ENDPROC

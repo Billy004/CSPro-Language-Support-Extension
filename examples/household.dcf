@@ -1,0 +1,66 @@
+[Dictionary]
+Version=CSPro 8.0
+Name=HOUSEHOLD_DICT
+Label=Household Survey Dictionary
+RecordTypeStart=1
+RecordTypeLen=1
+
+[Level]
+Name=HOUSEHOLD_LEVEL
+Label=Household
+
+[Record]
+Name=HOUSEHOLD_REC
+Label=Household Record
+RecordTypeValue=H
+Required=Yes
+MaxRecords=1
+
+[Item]
+Name=HHID
+Label=Household ID
+Start=2
+Len=8
+DataType=Numeric
+
+[Item]
+Name=REGION
+Label=Region
+Start=10
+Len=2
+DataType=Numeric
+
+[Record]
+Name=PERSON_REC
+Label=Person Record
+RecordTypeValue=P
+Required=No
+MaxRecords=30
+
+[Item]
+Name=LINE_NO
+Label=Line Number
+Start=2
+Len=2
+DataType=Numeric
+
+[Item]
+Name=AGE
+Label=Age in completed years
+Start=4
+Len=3
+DataType=Numeric
+
+[Item]
+Name=SEX
+Label=Sex
+Start=7
+Len=1
+DataType=Numeric
+
+[Item]
+Name=NAME
+Label=Full name
+Start=8
+Len=30
+DataType=Alpha
