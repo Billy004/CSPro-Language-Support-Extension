@@ -1,0 +1,149 @@
+{
+  "name": "cspro-language-support",
+  "displayName": "CSPro Language Support",
+  "description": "Full development support for CSPro: syntax highlighting, autocomplete, navigation, diagnostics, dictionary parsing and code generation.",
+  "version": "0.3.0",
+  "publisher": "ubos",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets",
+    "Linters",
+    "Other"
+  ],
+  "keywords": [
+    "cspro",
+    "census",
+    "survey",
+    "ubos",
+    "logic"
+  ],
+  "icon": "images/icon.png",
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onLanguage:cspro",
+    "workspaceContains:**/*.dcf"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "cspro",
+        "aliases": [
+          "CSPro",
+          "cspro"
+        ],
+        "extensions": [
+          ".ent",
+          ".app",
+          ".dcf",
+          ".pff",
+          ".fmf",
+          ".pen",
+          ".apc",
+          ".ff",
+          ".ffs",
+          ".ffd"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "cspro",
+        "scopeName": "source.cspro",
+        "path": "./syntaxes/cspro.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "cspro",
+        "path": "./snippets/cspro.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "cspro.createProcedure",
+        "title": "CSPro: Create Procedure",
+        "category": "CSPro"
+      },
+      {
+        "command": "cspro.generateSqlFromDictionary",
+        "title": "CSPro: Generate SQL Schema from Dictionary",
+        "category": "CSPro"
+      },
+      {
+        "command": "cspro.refreshExplorer",
+        "title": "CSPro: Refresh Project Explorer",
+        "category": "CSPro",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "cspro.revealSymbol",
+        "title": "CSPro: Reveal Symbol",
+        "category": "CSPro"
+      }
+    ],
+    "views": {
+      "cspro-explorer": [
+        {
+          "id": "csproProjectExplorer",
+          "name": "CSPro Project",
+          "icon": "$(symbol-structure)",
+          "contextualTitle": "CSPro Project"
+        }
+      ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "cspro-explorer",
+          "title": "CSPro",
+          "icon": "images/activitybar.svg"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "cspro.refreshExplorer",
+          "when": "view == csproProjectExplorer",
+          "group": "navigation"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "cspro.revealSymbol",
+          "when": "false"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "CSPro Language Support",
+      "properties": {
+        "cspro.diagnostics.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable CSPro code validation (diagnostics)."
+        },
+        "cspro.diagnostics.unknownFunctions": {
+          "type": "boolean",
+          "default": true,
+          "description": "Warn about calls to functions that are not recognized CSPro functions."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.0",
+    "@types/vscode": "^1.75.0",
+    "typescript": "^5.4.0"
+  }
+}

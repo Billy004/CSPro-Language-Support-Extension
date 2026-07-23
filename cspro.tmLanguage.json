@@ -1,0 +1,14 @@
+{
+ "scopeName": "source.cspro",
+ "patterns": [
+   {
+    "match": "\\b(PROC|ENDPROC|IF|THEN|ELSE|ENDIF)\\b",
+    "name": "keyword.control.cspro"
+   },
+
+   {
+    "match": "\\b(errmsg|setvalue|getvalue)\\b",
+    "name": "support.function.cspro"
+   }
+ ]
+}
