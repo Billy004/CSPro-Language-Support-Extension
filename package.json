@@ -1,9 +1,9 @@
 {
   "name": "cspro-language-support",
-  "displayName": "CSPro Language Support",
+  "displayName": "CSPro Development Tools",
   "description": "Full development support for CSPro: syntax highlighting, autocomplete, navigation, diagnostics, dictionary parsing and code generation.",
   "version": "0.3.0",
-  "publisher": "ExpedictoWalugembe",
+  "publisher": "WalugembeExpedicto",
   "license": "MIT",
   "engines": {
     "vscode": "^1.75.0"
